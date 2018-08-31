@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-<head>
+
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,39 +10,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Hangman</title>
-</head>
-<body>
+  </head>
+
+  <body>
 
     <div class="container">
-        <div class="jumbotron">
-          <h1>Hangman</h1> 
-          <p>No finer way to waste three minutes.</p> 
+      <div class="jumbotron">
+        <h1>Hangman</h1>
+        <p>No finer way to waste three minutes.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class=col-sm-6 col-md-3 col-4>
+          <img src="http://place-hold.it/300x300" style="padding:40px;">
+        </div>
+        <div class=col-sm-6 col-md-9 col-8 style="padding:10px; text-align:center;">
+        <button id="resetButton">Press Me to Play</button>
+          <p>_____________________</p>
+          <p>Wins:</p>
+          <p><span id="winsText"></span></p><br>
+          <p>_____________________</p>
+          <p>Losses:</p>
+          <p><span id="lossesText"></span></p><br>
+          <p>_____________________</p>
+          <p>Current Word:</p>
+          <p><span id="placeHolderArray"></span></p><br>
+          <p>Guesses Remaining:</p>
+          <p><span id="remainingGuessText"></span></p><br>
+          <p>_____________________</p>
+          <p>Letters Guessed</p><br>
+          <p><span id="incorrectLetterText"></span></p>
         </div>
       </div>
-
-    <div class="container">
-            <div class="row">
-                <div class=col-3>
-                    <img src="http://place-hold.it/300x400" style="padding:20px;">
-                </div>
-                <div class=col-8 style="padding:10px; text-align:center;">
-                        <p>Press Any Key To Play</p>
-                        <p>_____________________</p>
-                        <p>Wins:</p>
-                        <p>*Placeholder for wins*</p>
-                        <p>_____________________</p>
-                        <p>Current Word:</p>
-                        <p>*Placeholder for current word*</p>
-                        <p>_____________________</p>
-                        <p>Guesses Remaining:</p>
-                        <p>*Guesses Remaining Counter Number*</p>
-                        <p>_____________________</p>
-                        <p>Letters Guessed</p>
-                        <p><span id="gLetter">...</span></p>
-                </div>
-            </div>
     </div>
- 
+
     <!-- Optional JavaScript -->
     <script src="Assets/Javascript/game.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -49,4 +53,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
+
 </html>

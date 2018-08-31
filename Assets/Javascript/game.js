@@ -1,46 +1,71 @@
-// the words
+//variables for html text
 
-var wordList = [
-    "skyrim",
-    "fallout",
-    "mario",
-    "kirby",
-    "metroid",
-    "xcom",
-    "counterstrike",
-    "halflife",
-];
+var winsText = document.getElementById("winsText");
+var lossesText = document.getElementById("lossesText");
+var remainingGuessText = document.getElementById("remainingGuessText");
+var incorrectLetterText = document.getElementById("incorrectLetterText");
+var placeHolderArray = document.getElementById("placeHolderArray");
 
-// tries 
+//variables for game stuff
 
-const maximumTries = 10;
+var wordBank = ["mario", "zelda", "doom", "kirby", "paperboy", "contra"]
+var wins = 0;
+var losses = 0;
+var remainingGuess = 10;
+var gameRunning = false;
+var pickedWord = "";
+var guessedLetter = [];
+var placeHolderArray = [];
+var incorrectLetter = [];
 
-// guessed letters array
+//game reset
 
-var guessedLetters = [];
+function newGame() {
+gameRunning = true;
+remainingGuess = 10;
+incorrectLetter = [];
+placeHolderArray = [];
+correctLetter = [];
 
-// current word in the index
+//word selection
+pickedWord = wordBank [Math.floor(Math.random() * wordBank.length)]; 
 
-var indexedWord;
-
-// the word itself
-
-var currentWord = [];
-
-// how many guesses left and wins
-
-var remainingGuess = 0;
-var wins = 0; 
-
-var gameStart = false;
-var gameFinish = false;
-
-// -----------------------------------------
-
-function updateDisplay() {
-
-document.getElementById("wins").innerText = wins;
-document.getElementById("remainingGuess").innerText = remainingGuess;
-document.getElementById("guessedLetters").innerText = guessedLetters;
-
+//fill the blank letter array with blanks
+for (var i = 0; i < pickedWord.length; i++) {
+	placeHolderArray.push(" _ ")
 }
+
+//fill the HTML with the variables
+winsText.innerHTML = wins;
+lossesText.textContent  = losses;
+remainingGuessText.textContent = remainingGuess;
+placeHolderArray.textContent = placeHolderArray.join("");
+incorrectLetterText.textContent = incorrectLetter;
+}
+//DONT PRESS THE BUTTTTTTONNNN
+resetButton.addEventListener('click', newGame);
+
+//letter guess function 
+function letterGuess(letter) {
+
+
+    if (gameRunning === true && correctLetter.indexOf(letter) === -1) {
+    correctLetter.push(letter);
+    }
+    
+    for (var i = 0; i < pickedWord.length; i++){
+        if (pickedWord[i] === letter) {
+            placeHolderArray[i] = pickedWord[i]
+        }
+    }
+
+document.onkeyup = function(event) {
+    console.log(this.onkeyup)
+
+    var userGuess = event.key;
+    
+    if (userGuess.keyCode >= 65 && userGuess.KeyCode <=90) {
+        letterGuess(userGuess);}
+    }
+}
+
