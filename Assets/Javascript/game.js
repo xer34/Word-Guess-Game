@@ -22,32 +22,61 @@ var gameRunning = false;
 // new game function for reset
 
 function newGame() {
-    remainingGuess = 10;
-    incorrectLetterBank = [];
-    placeHolderArray = [];
-    lettersGuessed = [];
-    gameRunning = true;
-    console.log(placeHolderArray);
+  remainingGuess = 10;
+  incorrectLetterBank = [];
+  placeHolderArray = [];
+  lettersGuessed = [];
+  gameRunning = true;
+  console.log(placeHolderArray);
 
-// pick a word!
+  // pick a word!
 
-pickedWord = wordBank[Math.floor(Math.random()  * wordBank.length)];
+  pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
-    for (i = 0; i < pickedWord.length; i++) {
+  for (i = 0; i < pickedWord.length; i++) {
     placeHolderArray.push(" __ ");
-    }
+  }
 
 
-// write stuff to DOM
+  // write stuff to DOM
 
-winsText.textContent = wins;
-lossesText.textContent = losses;
-placeHolderArrayText.textContent = placeHolderArray;
-lettersGuessedText.textContent = incorrectLetterBank;
-remainingGuessText.textContent = remainingGuess;
+  winsText.textContent = wins;
+  lossesText.textContent = losses;
+  placeHolderArrayText.textContent = placeHolderArray.join("");
+  lettersGuessedText.textContent = incorrectLetterBank;
+  remainingGuessText.textContent = remainingGuess;
 }
 
 //button
 
 resetButton.addEventListener("click", newGame);
 
+// game logic
+
+function letterGuess(letter) {
+  console.log(letter);
+
+  // if game is running, and gussed letter is not in arrary, pushes letter
+  if (gameRunning === true && lettersGuessed.indexOf(letter) === -1) {
+    lettersGuessed.push(letter);
+
+    // replaces place holder with letter
+
+    for (var i = 0; i < pickedWord.length; i++) {
+      if (pickedWord[i] === letter) {
+        placeHolderArray[i] = pickedWord[i];
+      }
+
+    }
+
+    placeHolderArrayText.textContent = placeHolderArray.join("");
+  }
+
+  // onkeyup event
+
+  document.onKeyUp = function(event) {
+    if (event.keyCode >= 65 && event.keycode <= 90) {
+      letterGuess(event.key);
+    }
+  }
+}
