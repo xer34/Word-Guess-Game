@@ -4,8 +4,8 @@ var winsText = document.getElementById("winsText");
 var lossesText = document.getElementById("lossesText");
 var placeHolderArrayText = document.getElementById("placeHolderArrayText");
 var remainingGuessText = document.getElementById("remainingGuessText");
-var lettersGuessedText = document.getElementById("lettersGuessedText")
-var resetButton = document.getElementById("resetButton")
+var lettersGuessedText = document.getElementById("lettersGuessedText");
+var resetButton = document.getElementById("resetButton");
 
 // create var for wins losses arrays
 
@@ -25,15 +25,16 @@ function newGame() {
     remainingGuess = 10;
     incorrectLetterBank = [];
     placeHolderArray = [];
-    incorrectLetterBank = [];
     lettersGuessed = [];
+    gameRunning = true;
+    console.log(placeHolderArray);
 
 // pick a word!
 
 pickedWord = wordBank[Math.floor(Math.random()  * wordBank.length)];
 
     for (i = 0; i < pickedWord.length; i++) {
-    placeHolderArray.push(" __ ")
+    placeHolderArray.push(" __ ");
     }
 }
 
@@ -41,8 +42,9 @@ pickedWord = wordBank[Math.floor(Math.random()  * wordBank.length)];
 
 winsText.textContent = wins;
 lossesText.textContent = losses;
-placeHolderArrayText.textContent = placeHolderArray.join("");
+placeHolderArrayText.textContent = placeHolderArray;
 lettersGuessedText.textContent = incorrectLetterBank;
+remainingGuessText.textContent = remainingGuess;
 
 //button
 
