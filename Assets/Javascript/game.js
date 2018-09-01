@@ -36,7 +36,7 @@ pickedWord = wordBank[Math.floor(Math.random()  * wordBank.length)];
     for (i = 0; i < pickedWord.length; i++) {
     placeHolderArray.push(" __ ");
     }
-}
+
 
 // write stuff to DOM
 
@@ -45,6 +45,7 @@ lossesText.textContent = losses;
 placeHolderArrayText.textContent = placeHolderArray;
 lettersGuessedText.textContent = incorrectLetterBank;
 remainingGuessText.textContent = remainingGuess;
+}
 
 //button
 
