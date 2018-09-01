@@ -74,7 +74,7 @@ function letterGuess(letter) {
 
   // onkeyup event
 
-  document.onKeyUp = function(event) {
+  document.onkeyup = function(event) {
     if (event.keyCode >= 65 && event.keycode <= 90) {
       letterGuess(event.key);
     }
