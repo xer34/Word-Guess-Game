@@ -10,21 +10,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Hangman</title>
+    <style>
+    .jumbotron {
+      background-image: url(Assets/Images/jumbotron.png);
+      color: white;
+    }
+    </style>
   </head>
 
-  <body background=Assets/Images/Background.png>
+  <body background=Assets/Images/Background.png style="color:black">
 
-    <div class="container">
+    <div class="container" style="color:black">
       <div class="jumbotron">
-        <h1>Hangman</h1>
+        <h1>Guess the Video Game Classics!</h1>
         <p>No finer way to waste three minutes.</p>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="color:white">
       <div class="row">
         <div class=col-sm-6 col-md-3 col-4>
-          <img src="http://place-hold.it/300x300" style="padding:40px;">
+          <img src="Assets/Images/newStart.png" id="gameImg" style="padding:40px;">
         </div>
         <div class=col-sm-6 col-md-9 col-8 style="padding:10px; text-align:center;">
         <button id="resetButton">Press Me to Play</button>
