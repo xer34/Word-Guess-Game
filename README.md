@@ -8,8 +8,8 @@ This project is not available for additional contribution from the github commun
 
 More information:
 
-See the Live Project [Here.](https://xer34.github.io/TriviaGame/)
+See the Live Project [Here.](https://xer34.github.io/Word-Guess-Game/)
 
-See Under the Hood [Here.](https://github.com/xer34/TriviaGame)
+See Under the Hood [Here.](https://github.com/xer34/Word-Guess-Game)
 
-See Alexander Lewis' Website and Entire Portfolio [www.AlexanderLewis.net](www.AlexanderLewis.net)
+See Alexander Lewis' [Website](www.alexanderlewis.net) and Entire [Repostitory](https://github.com/xer34?tab=repositories)
