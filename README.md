@@ -4,7 +4,7 @@ Word Guess Game is a hangman style word guessing game in which the user attempts
 
 This game is useful to learn the principals of javascript arrays, functions, statements, and loops. It is also useful to begin learning about the power of objects.
 
-This project is not available for additional contribution from the github community, however Kyle Rosenmeyer may be contacted through his website for help or questions regarding the project.
+This project is not available for additional contribution from the github community, however Alex may be contacted through his website for help or questions regarding the project.
 
 More information:
 
